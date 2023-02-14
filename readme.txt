@@ -17,11 +17,16 @@ To test the appliation:
 
     dotnet run 11111
 
-4) start the API prroject (SQLServer-Reminders.sql) with:
+4) start the API project (SQLServer-Reminders.sql) with:
 
     dotnet watch
 
-5) Use swagger UI to increment & decrement numbers
+5) Use swagger UI to increment & decrement numbers.
+
+If using postman with key 'fred', try these:
+
+- http://localhost:5000/inrcement/fred
+- http://localhost:5000/decrement/fred
 
 6) Look at the database tables to get a sense of stored data
 
