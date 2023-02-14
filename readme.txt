@@ -13,7 +13,9 @@ To test the appliation:
     SQLServer-Clustering.sql
     SQLServer-Reminders.sql
 
-3) start the silo with:
+Reference: https://learn.microsoft.com/en-us/dotnet/orleans/host/configuration-guide/adonet-configuration
+
+3) start first silo with:
 
     dotnet run 11111
 
@@ -30,5 +32,18 @@ If using postman with key 'fred', try these:
 
 6) Look at the database tables to get a sense of stored data
 
+7) start second clustered silo with:
+
+    dotnet run 22222
+
+    - In the silo terminal windows you will notice that both silos are regognizing one another.
+
+    - In the OrleansMembershipTable you will notice that another row is added for the secons silo.
+
+    - Run more requests and you will see that they are routed to different silos.
+
 NOTE:
 ConnectionString = @"Data Source=localhost,1444;Database=NewOrleans;Persist Security Info=True;User ID=sa;Password=SqlPassword!;TrustServerCertificate=True;";
+
+Reference: 
+https://bogdan-dina03.medium.com/running-a-cluster-of-microsoft-orleans-virtual-actors-e755ace1750
