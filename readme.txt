@@ -1,6 +1,6 @@
 Prerequisite: .NET 7.0
 
-To test the appliation:
+To test the application:
 
 1) Start a docker SQL-Server container with:
 
@@ -36,9 +36,9 @@ If using postman with key 'fred', try these:
 
     dotnet run 22222
 
-    - In the silo terminal windows you will notice that both silos are regognizing one another.
+    - In the silo terminal windows you will notice that both silos are recognizing one another.
 
-    - In the OrleansMembershipTable you will notice that another row is added for the secons silo.
+    - In the OrleansMembershipTable you will notice that another row is added for the second silo.
 
     - Run more requests and you will see that they are routed to different silos.
 
