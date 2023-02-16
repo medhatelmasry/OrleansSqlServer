@@ -10,16 +10,16 @@ public class Program
     private const string ClusterId = "SiloDemoCluster";
     private const string ServiceId = "SiloDemo#2";
 
-    private const string ConnectionString = @"Server=localhost\SQLEXPRESS;Database=Orleans;Trusted_Connection=True;";
-    private const string StorageProviderNamespace = "System.Data.SqlClient";
+    const string connectionString = @"Data Source=localhost,1444;Database=NewOrleans;Persist Security Info=True;User ID=sa;Password=SqlPassword!;TrustServerCertificate=True;";
+    const string storageProviderNamespace = "System.Data.SqlClient";
 
     public static async Task Main(string[] args)
     {
         IClusterClient orleansClient = new ClientBuilder()
             .UseAdoNetClustering(opt =>
             {
-                opt.ConnectionString = ConnectionString;
-                opt.Invariant = StorageProviderNamespace;
+                opt.ConnectionString = connectionString;
+                opt.Invariant = storageProviderNamespace;
             })
             .Configure<ClusterOptions>(opt =>
             {
